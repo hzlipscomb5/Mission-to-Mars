@@ -44,3 +44,13 @@ db.zoo.drop() #. After running that line in the shell, our pets collection will 
 
 #And to remove the test database, we will use this line of code: 
 db.dropDatabase().
+
+
+#When scraping, the "headless" browsing session is when a browser is run without the users seeing it at all. So, when headless=True is declared as we initiate the browser, we are telling it to run in headless mode. All of the scraping will still be accomplished, but behind the scenes.
+
+
+
+
+
+
+#SHORTCUT TO make an html template is simple ! and enter

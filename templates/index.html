@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mission to Mars</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Add Jumbotron to Header -->
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <!-- Add a button to activate scraping script -->
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+      <!-- Add section for Mars News -->
+      <div class="row" id="mars-news">
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-body">
+              <h2>Latest Mars News</h2>
+              <h4 class="media-heading">{{ mars.news_title }}</h4>
+              <p>{{ mars.news_paragraph }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section for Featured Image and Facts table -->
+      <div class="row" id="mars-featured-image">
+        <div class="col-md-8">
+          <h2>Featured Mars Image</h2>
+          <img
+            src="{{mars.featured_image }}"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="col-md-4">
+          <!-- Mars Facts -->
+          <div class="row" id="mars-facts">
+            <h4>Mars Facts</h4>
+            {{ mars.facts | safe }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+<!-- First, we added a <p /> tag to the Jumbotron, without any classes. This is because it's only there to help with formatting; 
+    it helps styling the content within the tag. Then we've added an <a /> tag with a few different classes included. -->
+
+    <!-- The "btn btn-primary btn-lg" classes are also part of Bootstrap's button component (we're using Bootstrap to create a button instead 
+        of the <button /> tag and element). There are three classes here because we're telling Bootstrap that we're using a button (btn), it's the 
+        primary color (btn-primary), and it's large (btn-lg). --> 
+        
+        <!-- An <a /> tag is specifically used to link to other things, so we've also included the href (hypertext reference). The href is the 
+            link to another document or webpage. In our case, we're linking it to another component of our page, "/scrape". -->
+            <!-- We've added a role="button" role so that the webpage knows this link functions as a button, not as a regular hyperlink (for style)-->
+            <!-- The role="button" is required for screen readers, which are devices that assist people with vision impairments while they visit webpages. When a screen reader encounters role=\"button,\" it will know that it has found a button and not a simple anchor element (<a />). -->
+<!-- The "Scra-e new data will be on the button" -->
+ <!-- By adding a class of "row" we're telling Bootstrap that we're about to use the grid system and everything within this div will be horizontally aligned. The id "mars-news" helps us select it later if we want to customize it later with CSS. -->
+ <!-- The col-md-12 means that we want to use 12 columns scaled to a midsize desktop display. This line tells us how many columns the grid will use-->
+ <!-- NOTE: If we were optimizing our page for tablets, we would use col-sm-12. For mobile phones, col-xs-12 is ideal. There is an option for larger screens as well: col-lg-12. -->
+ <!-- With this update, we've nested in two more tags: one with a class of "media" and one with a class of "media-body." First, this tells Bootstrap that we want our content to be displayed as media, and then we insert the media within the body. Bootstrap already has the custom CSS set up for these classes. Now our setup is complete and we can add the article title and summary. -->
+<!-- 
+ Add a second header for our media body, and under it set the scraped header mars.new_title, class media heading will format this -->
+
