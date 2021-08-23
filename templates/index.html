@@ -47,6 +47,19 @@
             {{ mars.facts | safe }}
           </div>
         </div>
+        <!-- Hemispheres -->
+        <div class="row" id= 'hemisphere'>
+          <h1>Mars Hemispheres</h1>
+          <div>
+            {% for hemisphere in mars.hemispheres %}
+            <div class= "col-md-2">
+              <img src ="{{hemisphere.img_url}}" class= "img-responsive" alt ="Hemispheres" >
+              <h4> {{hemisphere.title}} </h4>
+            </div>
+              {% endfor %}
+          </div>
+        </div>
+        
       </div>
     </div>
   </body>
